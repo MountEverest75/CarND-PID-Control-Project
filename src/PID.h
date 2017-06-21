@@ -12,10 +12,19 @@ public:
 
   /*
   * Coefficients
-  */ 
+  */
   double Kp;
   double Ki;
   double Kd;
+
+  /* Differential CTE */
+  double diff_cte;
+
+  /* Integral CTE */
+  double int_cte;
+
+  /* Previous CTE*/
+  double prev_cte;
 
   /*
   * Constructor
