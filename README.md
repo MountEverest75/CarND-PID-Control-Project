@@ -1,5 +1,25 @@
-# CarND-Controls-PID
-Self-Driving Car Engineer Nanodegree Program
+# Self-Driving Car Engineer Nanodegree Program
+## CarND-Controls-PID Project
+
+---
+### Overview
+The main purpose of this project is to build a PID(Proportional/Integral/Differential) controller that responds to the cars primary controls steering, throttle and breaks. The PID process also needs to be successfully tested using a graphical simulator that drives a car on a single lane track that captures speed, Cross Track Errors(CTE) and steering angle. The PID controller must respond to the the data captured by the simulator and perform adjustments to successful finish driving through the track without touching the edges.
+
+---
+### Tuning and Observations
+
+#### How P, I and D components effect PID controller
+P Component - It can be inferred that the P(Proportional) component has direct effect on cars movement. The car needs to steer in inverse proportional to the center of the lane which is identified by Cross Track Errors(CTE). It also a measure of natural adjustment we do while driving cars. For example if the lane curves to the left the car's alignment and tendency to turn right needs to the corrected by steering left.
+
+D Component - The Differential(D) component compliments the P component's snake movement defined as overshoot and ring motion. A well tuned D parameter ensures smooth steering motion and reduces snake like motion through the driving lane. Without D component the CTE will be higher.
+
+I Component - The Integral(I) component counters the systematic bias that could cause the other PD components avoid car steering towards the center due to factors like steering drift, speed noise and distance noise. The I component ensured that the car drove well at curves.
+
+#### How P, I and D components were chosen
+The initial values of Kp=0.2, Ki = 0.004 and Kd = 3.0 were chosen from lessons by checking the x_trajectory and y_trajectory plots in Python code that gave a good rule of thumb on how the PID controls could effect the behavior. The values were tuned down to achieve desired effect before implementing Twiddle algorithm. The final values chosen were Kp = 0.1, Ki = 0.0002 and Kd = 3.0 which gave the best result. The graphical plot produced by Python code for these values is given below:
+![](./images/PIDControls.png)
+
+The light green shows the plot for PID controller tuned for these purposes.
 
 ---
 
@@ -19,7 +39,7 @@ Self-Driving Car Engineer Nanodegree Program
   * Run either `./install-mac.sh` or `./install-ubuntu.sh`.
   * If you install from source, checkout to commit `e94b6e1`, i.e.
     ```
-    git clone https://github.com/uWebSockets/uWebSockets 
+    git clone https://github.com/uWebSockets/uWebSockets
     cd uWebSockets
     git checkout e94b6e1
     ```
@@ -33,7 +53,7 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./pid`. 
+4. Run it: `./pid`.
 
 ## Editor Settings
 
