@@ -16,7 +16,7 @@ D Component - The Differential(D) component compliments the P component's snake 
 I Component - The Integral(I) component counters the systematic bias that could cause the other PD components avoid car steering towards the center due to factors like steering drift, speed noise and distance noise. The I component ensured that the car drove well at curves.
 
 #### How P, I and D components were chosen
-The initial values of Kp=0.2, Ki = 0.004 and Kd = 3.0 were chosen from lessons by checking the x_trajectory and y_trajectory plots in Python code that gave a good rule of thumb on how the PID controls could effect the behavior. The values were tuned down to achieve desired effect before implementing Twiddle algorithm.
+The initial values of Kp=0.2, Ki = 0.004 and Kd = 3.0 were chosen from lessons by checking the x_trajectory and y_trajectory plots in Python code that gave a good rule of thumb on how the PID controls could effect the behavior. The values were tuned down to achieve desired effect without implementing Twiddle algorithm.
 
 The final values chosen were Kp = 0.1, Ki = 0.0002 and Kd = 3.0 which gave the best result. The graphical plot produced by Python code for these values is given below:
 ![](./images/PIDControls.png)
@@ -24,8 +24,6 @@ The final values chosen were Kp = 0.1, Ki = 0.0002 and Kd = 3.0 which gave the b
 The IPython note book with source code used to try out different approaches is available [here](./src/PIDControllerLabs.ipynb). The source code under cell#6 is used as basis for arriving at the values that led the car to complete full laps.
 
 The car was left running for close 4 hours and it did not crash leading to finalize the parameters as suggested above.
-
-Although twiddle approach was not necessary to define parameters I wanted to try this approach on a separate branch "twiddle_branch"
 
 ---
 # Reference to Run the Source Code
