@@ -23,9 +23,9 @@ The final values chosen were Kp = 0.1, Ki = 0.0002 and Kd = 3.0 which gave the b
 
 The IPython note book with source code used to try out different approaches is available [here](./src/PIDControllerLabs.ipynb). The source code under cell#6 is used as basis for arriving at the values that led the car to complete full laps.
 
-The car was left running for close 2 hours and it did not crash leading to finalize the parameters as suggested above.
+The car was left running for close 4 hours and it did not crash leading to finalize the parameters as suggested above.
 
-The twiddle approach has been implemented as a separate "twiddle_branch".
+Although twiddle approach was not necessary to define parameters I wanted to try this approach on a separate branch "twiddle_branch"
 
 ---
 # Reference to Run the Source Code
